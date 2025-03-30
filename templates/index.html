@@ -7,7 +7,7 @@
 </head>
 <body>
     <center><p>Entrer</p></center>
-    <form action="/predict" method="post">
+    <form action="/prediz" method="post">
         <label for="sepal_length">Sepal Length:</label>
         <input type="text" name="sepal_length" id="sepal_length" required>
         <br>
@@ -20,10 +20,13 @@
         <label for="petal_width">Petal Width:</label>
         <input type="text" name="petal_width" id="petal_width" required>
         <br>
-        <button type="submit">Predict</button>
+        <button type="submit">Prediga</button>
     </form>
-    {% if species %}
-    <h2>A previsão é: {{ especie }}</h2>
+    {% if especies %}
+    <h2>A previsão é: {{ especies }}</h2>
+    {% endif %}
+    {% if error %}  
+    <h2 style="color: red;">Erro: {{ error }}</h2>
     {% endif %}
 </body>
 </html>
